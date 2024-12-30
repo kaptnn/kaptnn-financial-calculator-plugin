@@ -36,5 +36,18 @@ class EnqueueAssets
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('present_value_calc_nonce'),
         ]);
+
+        wp_enqueue_script(
+            'weighted-average-calculator-js',
+            plugin_dir_url(__FILE__) . '../assets/js/weighted_average_calc.js',
+            ['jquery'],
+            '1.0',
+            true
+        );
+
+        wp_localize_script('weighted-average-calculator-js', 'weightedAverageCalcVars', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('weighted_average_calc_nonce'),
+        ]);
     }
 }

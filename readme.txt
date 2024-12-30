@@ -1,10 +1,9 @@
 === KAPTNN Financial Calculator ===
 Contributors: elsamrafisptr
-Donate link: https://example.com/donate
 Tags: calculator, finance, api integration, python, company, accountancy
 Requires at least: 5.5
 Tested up to: 6.3
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -29,8 +28,8 @@ KAPTNN Financial Calculator is a versatile WordPress plugin that provides financ
 
 == Changelog ==
 
-= 1.0.3 =
-* Add Present Value Calculator
+= 1.1.0 =
+* Add Goal Seeking Feature from Scipy
 
 = 1.0.2 =
 * Switched to server-side proxy for secure API communication.

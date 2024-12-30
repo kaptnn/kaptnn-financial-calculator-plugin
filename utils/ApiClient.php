@@ -5,10 +5,10 @@ namespace Utils;
 class ApiClient
 {
     // Base URL Public
-    // private static $base_url = 'https://api.sempoa.my.id/api/v1';
+    private static $base_url = 'https://api.sempoa.my.id/api/v1';
     
     // Base URL Local
-    private static $base_url = 'http://127.0.0.1:8000/api/v1';
+    // private static $base_url = 'http://127.0.0.1:8000/api/v1';
 
     public static function get($endpoint, $params = [])
     {
