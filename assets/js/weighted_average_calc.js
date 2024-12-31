@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
       });
     }
 
-    let url = `http://api.sempoa.my.id/api/v1/${
+    let url = `https://api.sempoa.my.id/api/v1/${
       calculationType === "weighted_average"
         ? "calculator/weighted-average"
         : "goal-seeking/weighted-average"
