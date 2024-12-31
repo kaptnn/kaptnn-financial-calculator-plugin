@@ -12,7 +12,7 @@ require_once plugin_dir_path(__FILE__) . 'utils/EnqueueAssets.php';
 require_once plugin_dir_path(__FILE__) . 'utils/ShortcodeManager.php';
 require_once plugin_dir_path(__FILE__) . 'controllers/DepreciationCalculatorController.php';
 require_once plugin_dir_path(__FILE__) . 'controllers/PresentValueController.php';
-require_once plugin_dir_path(__FILE__) . 'controllers/WeightedAverageGoalSeekingController.php';
+require_once plugin_dir_path(__FILE__) . 'controllers/WeightedAverageGoalSeeking.php';
 require_once plugin_dir_path(__FILE__) . 'utils/ApiClient.php';
 
 use Utils\EnqueueAssets;
