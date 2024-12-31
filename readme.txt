@@ -1,5 +1,6 @@
 === KAPTNN Financial Calculator ===
 Contributors: elsamrafisptr
+Donate link: https://example.com/donate
 Tags: calculator, finance, api integration, python, company, accountancy
 Requires at least: 5.5
 Tested up to: 6.3
@@ -30,6 +31,7 @@ KAPTNN Financial Calculator is a versatile WordPress plugin that provides financ
 
 = 1.1.0 =
 * Add Goal Seeking Feature from Scipy
+* Remove unused file and folder
 
 = 1.0.2 =
 * Switched to server-side proxy for secure API communication.
