@@ -49,5 +49,18 @@ class EnqueueAssets
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('weighted_average_calc_nonce'),
         ]);
+
+        wp_enqueue_script(
+            'auth-js',
+            plugin_dir_url(__FILE__) . '../assets/js/auth.js',
+            ['jquery'],
+            '1.0',
+            true
+        );
+
+        wp_localize_script('auth-js', 'authVars', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('auth_nonce'),
+        ]);
     }
 }

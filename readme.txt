@@ -29,9 +29,11 @@ KAPTNN Financial Calculator is a versatile WordPress plugin that provides financ
 
 == Changelog ==
 
+= 1.2.0 =
+* Add Authentication and User Management
+
 = 1.1.0 =
 * Add Goal Seeking Feature from Scipy
-* Remove unused file and folder
 
 = 1.0.2 =
 * Switched to server-side proxy for secure API communication.
