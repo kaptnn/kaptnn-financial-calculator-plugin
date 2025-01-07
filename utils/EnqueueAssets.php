@@ -11,6 +11,7 @@ class EnqueueAssets
 
     public static function loadAssets()
     {
+        // Every new feature you need to add new 2 assets (wp_enqueue_script and wp_localize_script)
         wp_enqueue_script(
             'depreciation-calculator-js',
             plugin_dir_url(__FILE__) . '../assets/js/depreciation_calc.js',
