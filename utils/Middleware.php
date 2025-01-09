@@ -2,6 +2,7 @@
 
 function restrict_page_access()
 {
+    // You can add the route or url that the page you want to protect in the array
     $protected_pages = ['dashboard', 'goal-seeking-of-weighted-average'];
 
     global $wp_query;
@@ -15,6 +16,7 @@ function restrict_page_access()
 
         $decoded_payload = validate_jwt_token($_COOKIE['access_token']);
 
+        // If the name of membership status is different (ex: premium) you can change the "pro" with "premium" 
         if ($decoded_payload['membership_status'] !== 'pro') {
             wp_redirect('/error?message=membership_status_basic');
             exit;
@@ -24,6 +26,7 @@ function restrict_page_access()
 
 function validate_jwt_token($token)
 {
+    // The secret key is based on the backend .env file, it should change it when the plugin is already installed
     $secret_key = 'secret';
     $parts = explode('.', $token);
 

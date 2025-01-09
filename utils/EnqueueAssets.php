@@ -14,6 +14,7 @@ class EnqueueAssets
         wp_enqueue_style('kaptnn-global-style', plugin_dir_url(__FILE__) . '../assets/css/global.css');
         wp_enqueue_style('kaptnn-style', plugin_dir_url(__FILE__) . '../assets/css/depreciation.css');
 
+        // Every new feature you need to add new 2 assets (wp_enqueue_script and wp_localize_script)
         wp_enqueue_script(
             'depreciation-calculator-js',
             plugin_dir_url(__FILE__) . '../assets/js/depreciation_calc.js',

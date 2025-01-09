@@ -6,6 +6,7 @@ class ShortcodeManager
 {
     public static function init()
     {
+        // Every a new feature add one shortcode below, so you can show the code (html) in the wordpress
         add_shortcode('depreciation_calculator', [__CLASS__, 'renderDepreciationCalculator']);
         add_shortcode('present_value_calculator', [__CLASS__, 'renderPresentValueCalculator']);
         add_shortcode('weighted_average_goal_seeking_calculator', [__CLASS__, 'renderWeightedAverageCalculator']);
@@ -14,6 +15,7 @@ class ShortcodeManager
         add_shortcode('plugin_error_message', [__CLASS__, 'my_plugin_error_message_shortcode']);
     }
 
+    // After done added the shortcode please write the render functions below
     public static function renderDepreciationCalculator()
     {
         ob_start();
@@ -48,6 +50,9 @@ class ShortcodeManager
         include plugin_dir_path(__FILE__) . '../views/RegisterForm.php';
         return ob_get_clean();
     }
+
+    // Add new render function here
+    
 
     public static function my_plugin_error_message_shortcode($atts)
     {
