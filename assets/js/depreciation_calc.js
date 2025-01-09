@@ -6,6 +6,10 @@ jQuery(document).ready(function ($) {
     }).format(number);
   }
 
+  function parseRupiah(value) {
+    return value.replace(/[^0-9]/g, "");
+  }
+
   $("#depreciation-calculator-form").on("submit", function (e) {
     e.preventDefault();
 
