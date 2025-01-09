@@ -10,7 +10,7 @@
                 class="form-input"
                 placeholder="Masukkan nilai perkiraan yang dicapai di masa depan"
                 aria-describedby="future-value-help"
-                autocomplete="of">
+                autocomplete="off">
         </div>
 
         <div class="form-group">

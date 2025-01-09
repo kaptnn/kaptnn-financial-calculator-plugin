@@ -48,10 +48,10 @@ jQuery(document).ready(function ($) {
             );
           } else {
             $("#depreciation-calculator-result").html(
-              `<strong>Biaya Penyusutan/Bulan:</strong> Rp ${formatToIDR(
+              `<strong>Biaya Penyusutan/Bulan:</strong><br> Rp ${formatToIDR(
                 response.data.biaya_per_bulan
               )}<br>
-                <strong>Biaya Penyusutan/Tahun:</strong> Rp ${formatToIDR(
+                <strong>Biaya Penyusutan/Tahun:</strong><br> Rp ${formatToIDR(
                   response.data.biaya_per_tahun
                 )}`
             );
