@@ -3,7 +3,7 @@
         <div class="form-group">
             <label for="future_value" class="form-label">Nilai Masa Depan:</label>
             <input
-                type="number"
+                type="text"
                 id="future_value"
                 name="future_value"
                 required
@@ -16,7 +16,7 @@
         <div class="form-group">
             <label for="rate" class="form-label">Rate (%):</label>
             <input
-                type="number"
+                type="text"
                 id="rate"
                 name="rate"
                 required
@@ -29,7 +29,7 @@
         <div class="form-group">
             <label for="period" class="form-label">Period (years):</label>
             <input
-                type="number"
+                type="text"
                 id="period"
                 name="period"
                 required
