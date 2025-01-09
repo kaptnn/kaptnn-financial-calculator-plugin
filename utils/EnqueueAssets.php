@@ -11,6 +11,9 @@ class EnqueueAssets
 
     public static function loadAssets()
     {
+        wp_enqueue_style('kaptnn-global-style', plugin_dir_url(__FILE__) . '../assets/css/global.css');
+        wp_enqueue_style('kaptnn-style', plugin_dir_url(__FILE__) . '../assets/css/depreciation.css');
+
         wp_enqueue_script(
             'depreciation-calculator-js',
             plugin_dir_url(__FILE__) . '../assets/js/depreciation_calc.js',
