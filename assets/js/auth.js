@@ -30,6 +30,7 @@ jQuery(document).ready(function ($) {
             document.cookie = `access_token=${access_token}; path=/;`;
             document.cookie = `refresh_token=${refresh_token}; path=/;`;
           }
+          localStorage.setItem("token", access_token);
           $("#login-message").text("Login successful! Redirecting...");
           window.location.href = "/dashboard/";
         } else {
