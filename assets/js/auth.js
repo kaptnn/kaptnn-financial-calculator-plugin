@@ -32,7 +32,7 @@ jQuery(document).ready(function ($) {
           }
           localStorage.setItem("token", access_token);
           $("#login-message").text("Login successful! Redirecting...");
-          window.location.href = "/dashboard/";
+          window.location.href = "/profile/";
         } else {
           const errorMessage =
             response.data?.error ||
