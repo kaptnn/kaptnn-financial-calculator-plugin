@@ -16,7 +16,7 @@ class DepreciationCalculatorController
                 'metode' => sanitize_text_field($data['metode']),
             ];
 
-            $result = ApiClient::get('/calculator/penyusutan', $params);
+            $result = ApiClient::get('/calculator/depreciation', $params);
 
             if (isset($result['fallback']) && $result['fallback'] === true) {
                 wp_send_json_error($result);
