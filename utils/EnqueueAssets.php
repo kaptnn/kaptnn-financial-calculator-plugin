@@ -77,7 +77,7 @@ class EnqueueAssets
         );
 
         wp_localize_script('profile-js', 'profileVars', [
-            'api_url' => 'http://127.0.0.1:8000/api/v1/users/me',
+            'api_url' => 'https://api.sempoa.my.id/api/v1/users/me',
         ]);
 
         wp_enqueue_script(
