@@ -2,21 +2,27 @@
 /*
 Plugin Name: KAPTNN Financial Calculator
 Description: A modular plugin for multiple financial calculators integrated with FastAPI Python.
-Version: 1.0.3
+Version: 1.2.0
 Author: Elsam Rafi Saputra
 */
 
 if (!defined('ABSPATH')) exit;
 
-require_once plugin_dir_path(__FILE__) . 'utils/middleware.php';
+// Add new utility that required for the plugin below
+require_once plugin_dir_path(__FILE__) . 'utils/Middleware.php';
 require_once plugin_dir_path(__FILE__) . 'utils/EnqueueAssets.php';
 require_once plugin_dir_path(__FILE__) . 'utils/ShortcodeManager.php';
+require_once plugin_dir_path(__FILE__) . 'utils/ApiClient.php';
+
+// Add new controller that required for the plugin below
 require_once plugin_dir_path(__FILE__) . 'controllers/DepreciationCalculatorController.php';
 require_once plugin_dir_path(__FILE__) . 'controllers/PresentValueController.php';
 require_once plugin_dir_path(__FILE__) . 'controllers/WeightedAverageGoalSeeking.php';
 require_once plugin_dir_path(__FILE__) . 'controllers/RegisterController.php';
 require_once plugin_dir_path(__FILE__) . 'controllers/LoginController.php';
-require_once plugin_dir_path(__FILE__) . 'utils/ApiClient.php';
+
+use Utils\EnqueueAssets;
+use Utils\ShortcodeManager;
 
 spl_autoload_register(function ($class) {
     $prefix = 'Utils\\';
@@ -35,9 +41,6 @@ spl_autoload_register(function ($class) {
     }
 });
 
-use Utils\EnqueueAssets;
-use Utils\ShortcodeManager;
-
 EnqueueAssets::init();
 ShortcodeManager::init();
 
@@ -48,17 +51,24 @@ function load_jquery()
 
 add_action('wp_enqueue_scripts', 'load_jquery');
 add_action('template_redirect', 'restrict_page_access');
+
+// Add new 2 add_action (wp_ajax and wp_ajax_nopriv) every new feature added
 add_action('wp_ajax_handle_depreciation_calculator', 'handle_depreciation_calculator_request');
 add_action('wp_ajax_nopriv_handle_depreciation_calculator', 'handle_depreciation_calculator_request');
+
 add_action('wp_ajax_handle_present_value_calculator', 'handle_present_value_request');
 add_action('wp_ajax_nopriv_handle_present_value_calculator', 'handle_present_value_request');
+
 add_action('wp_ajax_handle_weighted_average_calculator', 'handle_weighted_average_request');
 add_action('wp_ajax_nopriv_handle_weighted_average_calculator', 'handle_weighted_average_request');
+
 add_action('wp_ajax_handle_register', 'handle_register_request');
 add_action('wp_ajax_nopriv_handle_register', 'handle_register_request');
+
 add_action('wp_ajax_handle_login', 'handle_login_request');
 add_action('wp_ajax_nopriv_handle_login', 'handle_login_request');
 
+// If already added 2 "add_action" for 1 feature add the function that required below (the function name is the second parameter)
 function handle_depreciation_calculator_request()
 {
     $controller = new \Controllers\DepreciationCalculatorController();
