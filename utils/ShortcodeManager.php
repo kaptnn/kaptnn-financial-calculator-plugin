@@ -6,16 +6,16 @@ class ShortcodeManager
 {
     public static function init()
     {
-        // Every a new feature add one shortcode below, so you can show the code (html) in the wordpress
         add_shortcode('depreciation_calculator', [__CLASS__, 'renderDepreciationCalculator']);
         add_shortcode('present_value_calculator', [__CLASS__, 'renderPresentValueCalculator']);
         add_shortcode('weighted_average_goal_seeking_calculator', [__CLASS__, 'renderWeightedAverageCalculator']);
         add_shortcode('kaptnn_login', [__CLASS__, 'render_login_form']);
         add_shortcode('kaptnn_register', [__CLASS__, 'render_registration_form']);
+        add_shortcode('user_profile', [__CLASS__, 'render_user_profile']);
+        add_shortcode('all_users', [__CLASS__, 'render_all_users']);
         add_shortcode('plugin_error_message', [__CLASS__, 'my_plugin_error_message_shortcode']);
     }
 
-    // After done added the shortcode please write the render functions below
     public static function renderDepreciationCalculator()
     {
         ob_start();
@@ -51,8 +51,19 @@ class ShortcodeManager
         return ob_get_clean();
     }
 
-    // Add new render function here
-    
+    public static function render_user_profile()
+    {
+        ob_start();
+        include plugin_dir_path(__FILE__) . '../views/ProfilePage.php';
+        return ob_get_clean();
+    }
+
+    public static function render_all_users()
+    {
+        ob_start();
+        include plugin_dir_path(__FILE__) . '../views/ProfilePage.php';
+        return ob_get_clean();
+    }
 
     public static function my_plugin_error_message_shortcode($atts)
     {

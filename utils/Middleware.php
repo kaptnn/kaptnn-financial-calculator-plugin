@@ -3,7 +3,7 @@
 function restrict_page_access()
 {
     // You can add the route or url that the page you want to protect in the array
-    $protected_pages = ['dashboard', 'goal-seeking-of-weighted-average'];
+    $protected_pages = ['dashboard', 'goal-seeking-of-weighted-average', 'profile', 'weighted-average'];
 
     global $wp_query;
     $current_page = $wp_query->query['pagename'] ?? '';

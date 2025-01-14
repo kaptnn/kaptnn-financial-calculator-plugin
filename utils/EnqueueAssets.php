@@ -67,5 +67,29 @@ class EnqueueAssets
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('auth_nonce'),
         ]);
+
+        wp_enqueue_script(
+            'profile-js',
+            plugin_dir_url(__FILE__) . '../assets/js/get_current_user.js',
+            ['jquery'],
+            '1.0.0',
+            true
+        );
+
+        wp_localize_script('profile-js', 'profileVars', [
+            'api_url' => 'https://api.sempoa.my.id/api/v1/users/me',
+        ]);
+
+        wp_enqueue_script(
+            'users-js',
+            plugin_dir_url(__FILE__) . '../assets/js/get_all_users.js',
+            ['jquery'],
+            '1.0.0',
+            true
+        );
+
+        wp_localize_script('users-js', 'usersVars', [
+            'api_url' => 'https://api.sempoa.my.id/api/v1/users/',
+        ]);
     }
 }
